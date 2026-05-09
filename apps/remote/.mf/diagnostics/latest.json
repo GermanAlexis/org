@@ -1,0 +1,10 @@
+{
+  "latestErrorEvent": {
+    "code": "TYPE-001",
+    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"npx tsc --project /home/alexis/Documents/mono-repo-react/org/apps/remote/node_modules/.federation/tsconfig.1504733c1bb6a89e365d20d1bb24390e.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
+    "args": {
+      "cmd": "npx tsc --project /home/alexis/Documents/mono-repo-react/org/apps/remote/node_modules/.federation/tsconfig.1504733c1bb6a89e365d20d1bb24390e.json"
+    },
+    "timestamp": 1778284645345
+  }
+}

@@ -1,8 +1,9 @@
-// eslint-disable-next-line
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import { Product, ProductFilter } from '@org/models';
 
 export class ProductsService {
-  private products: Product[] = [
+  private readonly products: Product[] = [
     {
       id: '1',
       name: 'Wireless Bluetooth Headphones',
