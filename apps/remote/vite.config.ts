@@ -16,7 +16,8 @@ export default defineConfig(() => ({
     port: 4201,
     host: 'localhost',
   },
-  plugins: [react(),
+  plugins: [
+  react(),
   federation({
     name: 'remote',
     manifest: true,
@@ -26,16 +27,10 @@ export default defineConfig(() => ({
     publicPath: 'http://localhost:4201/',
     shared: {
       react: {
-        singleton: false,
-      },
-      'react/': {
-        singleton: false,
+        singleton: true,
       },
       'react-dom': {
-        singleton: false,
-      },
-      'react-dom/': {
-        singleton: false,
+        singleton: true,
       },
     },
   }),

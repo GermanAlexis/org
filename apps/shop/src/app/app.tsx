@@ -18,23 +18,31 @@ const mf = createInstance({
       entry: 'http://localhost:4201/mf-manifest.json',
     },
   ],
-  shared: {
-    react: {
-      version: '19.2.6',
-      lib: () => React,
-      shareConfig: {
-        singleton: true,
-        requiredVersion: '^19.2.6',
-        eager: false,
-      },
-
-    },
-    'react-dom': {
-      version: '19.2.6',
-      lib: () => ReactDOM,
-      shareConfig: { eager: false, requiredVersion: '^19.2.6', singleton: true }
+ shared: {
+  react: {
+    version: '19.2.6',
+    lib: () => React,
+    shareConfig: {
+      singleton: true,
+      requiredVersion: false,
     },
   },
+  'react-dom': {
+    version: '19.2.6',
+    lib: () => ReactDOM,
+    shareConfig: {
+      singleton: true,
+      requiredVersion: false,
+    },
+  },
+  'react-router-dom': {
+    version: '7.15.0',
+    shareConfig: {
+      singleton: true,
+      requiredVersion: false,
+    },
+  },
+}
 });
 
 // Lazy load remote components
@@ -61,7 +69,7 @@ export function App() {
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Navigate to="/products" replace />} />
-            <Route path="/products" element={<RemoteButton />} />
+            <Route path="/products/*" element={<RemoteButton />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="*" element={<Navigate to="/products" replace />} />
           </Routes>
